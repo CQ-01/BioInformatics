@@ -32,3 +32,21 @@ PCR ~ NGS
 유기견나이(다른 종들의 같은 바이오마커 찾는 과정이 힘들었음)
 
 후성유전체학!
+
+## NGS
+- 이전에는 700~1000개 base pair 밖에 읽을 수 없었음
+- downstream analysis : 시퀀싱 과정이 편해짐에 따라 중요도 가중
+  - 시퀀싱데이터 해석할 수 있을 뿐만 아니라 생물학적 통찰을 찾을 수 있는 사람
+- 실제 작용하는 건 RNA, 단백질이나 DNA ~ RNA 서열만 읽을 수 있음
+- biological replicate 우선, technical replicate 차선
+- fastq : 151bp 염기서열
+- normalization은 필수, 연구자들 사이에 합의가 이루어짐
+
+### EDA
+> 탐색적 데이터 분석, 데이터를 처음 접하는 사람들이 데이터의 구조와 패턴을 파악하기 위해 사용
+- 획득한 데이터에 대해 critic한 태도를 유지
+
+
+- Negative control : 분석이 올바르게 수행되었다면 이 값이 반드시 나오지 않음
+- Positive control : 분석이 올바르게 수행되었다면 이 값이 반드시 도출됨
+- bulk RNA-seq $\rightarrow$ scRNA-seq
