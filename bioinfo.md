@@ -42,11 +42,43 @@ PCR ~ NGS
 - fastq : 151bp 염기서열
 - normalization은 필수, 연구자들 사이에 합의가 이루어짐
 
-### EDA
-> 탐색적 데이터 분석, 데이터를 처음 접하는 사람들이 데이터의 구조와 패턴을 파악하기 위해 사용
+## EDA
+> 탐색적 데이터 분석, 데이터를 처음 접하는 사람들이 데이터의 구조와 패턴을 파악하기 위해 사용, 견적을 내는 일
 - 획득한 데이터에 대해 critic한 태도를 유지
 
+### EDA의 대상
+- 일변량(Univariate)
+  - EDA를 통해 한 번에 파악하려는 변수가 1개
+  
+- 다변량 변수
+  - EDA를 통해 한 번에 파악하려는 변수가 여러 개
+  - 변수들 간의 관계를 보는 것이 주요 목적
 
+### EDA의 종류
+- 시각화(Graphic) : 차트 혹은 그림 등을 이용해 데이터 확인, 데이터를 한 눈에 파악 용이
+- 비시각화(Non-Graphic) : 주로 summary statistics 활용, 정확한 데이터값 파악 용이
+
+### EDA의 유형
+- 일변량 비시각화(Uni - Non Graphic)
+  - 주어진 데이터의 분산(distribution)을 확인하는 것이 주목적
+  - 수치형 자료라면 summary statistics를 주로 활용한다.
+  - 범주형 자료라면 발생(occurence), 빈도(frequency), 탭화(tabulation)
+
+- 일변량 시각화(Uni - Graphic)
+  - 주어진 데이터를 전체적으로 살펴보는 것이 주목적
+  - Histogram, pie chart, stem-leaf plot, boxplot, QQplot..
+  - 값들이 다양하다면 binning, tabulation 등 활용 가능
+  
+- 다변량 비시각화(Multi - Non Graphic)
+  - 변수간 관계(relationship)를 확인하는 것이 주목적
+  - cross-tabulation, cross-statistics(correlation, covariance) 등 활용
+  - 범주형 데이터는 행과 열을 바꾸는 cross-tabulation 적용가능
+  - 수치형 데이터는 cross statistics 활용가능
+  
+- 다변량 시각화(Multi - Graphic)
+  - 범주형과 수치형은 boxplot, stacked bar, parallel coordinate, heatmap
+  - 수치형끼리는 scatter plot 등
+  
 - Negative control : 분석이 올바르게 수행되었다면 이 값이 반드시 나오지 않음
 - Positive control : 분석이 올바르게 수행되었다면 이 값이 반드시 도출됨
 - bulk RNA-seq $\rightarrow$ scRNA-seq
