@@ -106,6 +106,7 @@ PCR ~ NGS
 - RNA maturation : pre-mRNA에서 인트론 서열이 제거되는 과정
 - mRNA는 RNA maturation 완료 후 3' end 쪽에 poly-A tail이 capping 된다(RNA 분해효소 기능 억제)
 - transcription factor(TF) 단백질, RNA polymerase 단백질이 전사를 돕는다
+  - RNA 연구 시 굉장히 중유하게 고려해야할 요소
 - miRNA : dicer protein과 결합하여 스스로와 상보적인 서열을 가지는 RNA 서열을 절단함으로서 발현 조절
 
 ### Protein
@@ -131,6 +132,7 @@ PCR ~ NGS
   - 참조서열 정보가 없는 경우 DNA-seq을 통해 참조서열 구축
   
 - Quantification
+  - gene_expression.xlsx파일 등 ; Quantification 완료된 상태
   - align을 마치고 mapping된 reads를 count
   - 특정 유전자 영역에 매핑된 reads의 수를 의미하며, 유전자의 발현값으로 분석하기 위해서는 반드시 생산량을 고려하여 정규화(normalization) 과정이 필요
 
@@ -144,6 +146,8 @@ PCR ~ NGS
   - R/FPKM
   - TPM
   - TMM
+
+- 약점 : RNA가 많이 발현된다고 반드시 Protein이 많이 발현되는 것은 아니다
 
 DEG분석
   edgeR
@@ -165,3 +169,36 @@ DEG분석
   - 단점 : 데이터 포매팅이 어렵고 리소스를 많이 차지한다. 추가적으로 정의해야 할 요소들이 많다
   - 장점 : 메타데이터(분석조건)을 굉장히 다원화 시킬 수 있다. 여러가지 변량 간의 연관도 등
   - 네트워크 애널리시스 : pathway 사이에 network를 연결해준다. 온갖 방법론에 따른 툴들이 즐비함.
+
+분자생물학과 전반적인 워크플로우
+BI, 하이브리드 직종으로 컴퓨터사이언스, 생물학적 인사이트 중 어느곳에 중점을 두어야 하는가
+Technician vs Scientist, 당연히 생물학적 인사이트에 중점을 두어야 한다
+컴퓨터사이언스는 보조할 수 있는 수단들이 많다.
+
+## 분석 논문
+- 논리전개 방식을 알아두기
+- 논문 리뷰
+
+## GEO 활용 RNA-Seq
+- 같은 샘플을 가지고 실험했기 때문에 결과가 크게 다르면 안 됨
+- EDA과정 : histogram, scatter plot, box plot을 확인해 데이터간의 전반적인 분포확인
+- DEG분석 : edgeR
+
+## GSEA
+> 2세대 pathway analysis
+### 과정
+- Gene expression data(.gct)
+- phenotype data(.cls)
+- DB 파일을 다운로드 받아왔을 때도 구조 확인하는 버릇
+- Gene Set Database(.gmt)
+- Ranked Gene Lists(.rnk)
+
+### 단점
+- data prep과정이 번거롭다
+- 데이터를 분석하는데에 있어 비직관적이다
+- 스크립트를 통한 자동화 불가능
+
+## fGESA
+> fast Gene Set Enrichment Analysis
+- GSEA 방법론 자체는 우수하나 프로그램의 단점이 많음
+- bioconductor tool중 40번째로 많이 사용됨
