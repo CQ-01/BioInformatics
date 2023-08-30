@@ -170,6 +170,8 @@ DEG분석
   - 장점 : 메타데이터(분석조건)을 굉장히 다원화 시킬 수 있다. 여러가지 변량 간의 연관도 등
   - 네트워크 애널리시스 : pathway 사이에 network를 연결해준다. 온갖 방법론에 따른 툴들이 즐비함.
 
+- 세대로 구분하나, 차 세대가 이전세대를 완벽히 커버하는 것은 아님
+
 분자생물학과 전반적인 워크플로우
 BI, 하이브리드 직종으로 컴퓨터사이언스, 생물학적 인사이트 중 어느곳에 중점을 두어야 하는가
 Technician vs Scientist, 당연히 생물학적 인사이트에 중점을 두어야 한다
@@ -186,6 +188,7 @@ Technician vs Scientist, 당연히 생물학적 인사이트에 중점을 두어
 
 ## GSEA
 > 2세대 pathway analysis
+
 ### 과정
 - Gene expression data(.gct)
 - phenotype data(.cls)
@@ -202,3 +205,33 @@ Technician vs Scientist, 당연히 생물학적 인사이트에 중점을 두어
 > fast Gene Set Enrichment Analysis
 - GSEA 방법론 자체는 우수하나 프로그램의 단점이 많음
 - bioconductor tool중 40번째로 많이 사용됨
+
+어느 유전자나 단백질이 어떤 상황에서 많이 발현되느냐?
+
+## DB
+### GEO
+
+### TCGA
+- GDC를 통해
+- GEO보다 양질의 데이터
+- 암정복에 대한 단서는 이미 TCGA에 올라와 있을 것이다
+
+## 새로운 방법론
+- RNA-Seq based
+  
+### scRNA-Seq
+- 암에 걸렸다고 가정하면 어느 세포는 정상세포이고, 어느 세포는 암세포일 것인데 기존 mRNA-Seq은 전체 세포를 하나의 데이터로 만들어 분석하나, single cell RNA-Seq은 세포 하나별 데이터를 보존하여 섬세한 결과를 도출 가능
+- RNA Seq보다 비직관적
+
+### Spatial transcriptomics
+> 세포의 실제 위치에 따라 발현되는 유전자의 차이를 구분
+
+### Multiomic Analysis    
+> genomics(DNA) + transcriptomics(RNA) + proteomics(Protein)
+
+## Cloud Computing
+|on-premises|cloud computing|
+|--|--|
+|높은 초기 투자 비용|사용한 만큼만 지불|
+|한정된 용량|유연한 용량|
+|많은 공수 및 소요시간|적은 노력 및 소요시간|
