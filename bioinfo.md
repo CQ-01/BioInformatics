@@ -251,3 +251,61 @@ Technician vs Scientist, 당연히 생물학적 인사이트에 중점을 두어
 
 ## Question
 - 시퀀싱 과정에서 염기서열들이 무작위로 뒤섞이는데 본래의 위치를 찾는 방법?
+
+---
+
+scRNA-seq시에 
+
+### 10x
+파이프라인 제공(cell ranger)
+count : alignment, filtering, barcode counting, UMI counting
+실험 방법이 다르니 
+10x barcode : 셀들을 분류, UMI : PCR 개발
+unique molecular index : PCR로 뻥튀기 된 상태에서 실제 샘플 값을 확인하는 방법
+
+### result structure
+- matrix
+  - filtered_bc_matrix : 어느정도(10x에서 정한) 검증된 분자만 검출
+    - 세포 사멸 단계를 연구하는데 10x에서 사멸 직전 세포로 판단해 필터링 당한다면?
+  - raw_feature_bc_matrix : 필터링 하지 않음
+- bam
+  - .bam : 바이너리 파일로 용량 최적화
+  - fastq 파일 자체를 bam파일로 만들기도 함
+- summary
+  - summary.html
+
+### seurat
+> scRNA-seq전용 R 패키지
+
+### 카운트 매트릭스
+- 4*4*4*4 하면 capa 확인이 된다? 10만 개 이상은 퀄리티가 좋지 않다?
+- barcode.tsv : 셀 번호
+- feature.tsv : 유전자 번호
+- matrix.mtx : 전체 통계
+
+### 실습
+- min.feature(100) : sum 최소가 100
+- assign(a, b) : a안의 변수를 b에 할당한다
+- , add.cell.id = c('ctrl', 'stim') : 머지할 때 cell id 뒤에 이름 추가
+- log10, UMI / QC(퀄리티 컨트롤)하기 위한 정보? 
+
+### QC(퀄리티 컨트롤)
+> 분석하기 위해 최적화된 세포들만 남겨놓는다
+- 목적 : 셀타입 identification 정확하게 하기 위함
+- UMI count per cell : 셀당 분자
+  - 적을 때 : 진짜 적은 것(사멸 중) or 잘못 매핑된 것
+  - 많을 때 : 잘못 매핑된 것 or 실제 많이 발현이 되는 것
+  - 이봉그래프는 안 좋은 샘플, 두번째 봉에 있는 것들을 분석
+  - 복잡도??
+
+### Normalization(정규화)
+- FP control :
+- depth를 맞추는 방법(sequencing depth normalization)
+  - 5'에서 150bp 시퀀싱하는 방법 vs 3'에서 하는 방법
+- total count 
+- scTransform : 지수를 만들어 정규화를 돕는다, 세포 phase에 따라 발현 유전자가 달라질 수도 있는 등
+
+### Integeratino
+
+### 클러스터링
+- PCA : 군집 분석
