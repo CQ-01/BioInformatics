@@ -309,3 +309,8 @@ unique molecular index : PCR로 뻥튀기 된 상태에서 실제 샘플 값을 
 
 ### 클러스터링
 - PCA : 군집 분석
+
+T-SNE : 글로벌 스탠타드를 유지해야 할 때, 각각의 발현값을 보고 싶을 때
+UMAP
+
+### Dimplot
