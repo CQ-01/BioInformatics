@@ -1,0 +1,137 @@
+{
+    "routines": [
+        {
+            "time": "10:00",
+            "content": "바이오 뉴스",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "10:00",
+            "content": "경제 뉴스",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "10:00",
+            "content": "영어회화",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "11:00",
+            "content": "상체 슈퍼세트",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "11:00",
+            "content": "하체 슈퍼세트",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "09:00",
+            "content": "토마토 돌보기",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "09:00",
+            "content": "거북 돌보기",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "12:00",
+            "content": "명상",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "12:00",
+            "content": "일기쓰기",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "13:00",
+            "content": "독서",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "14:00",
+            "content": "논문 리딩",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "20:00",
+            "content": "러닝 5km",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "18:00",
+            "content": "디지털역량",
+            "frequency": "daily",
+            "start_date": "2024-11-26"
+        },
+        {
+            "time": "12:00",
+            "content": "화분 비료 주기",
+            "frequency": "weekly",
+            "start_date": "2024-11-25"
+        },
+        {
+            "time": "12:00",
+            "content": "어항 물갈이",
+            "frequency": "weekly",
+            "start_date": "2024-11-25"
+        },
+        {
+            "time": "18:00",
+            "content": "이발",
+            "frequency": "monthly",
+            "start_date": "2024-11-01"
+        },
+        {
+            "time": "13:30",
+            "content": "2024 제약의약회 동계학술대회",
+            "frequency": "once",
+            "start_date": "2024-12-05",
+            "dates": [
+                "2024-12-05"
+            ]
+        },
+        {
+            "time": "10:00",
+            "content": "DATA WEEK 2024 1일차",
+            "frequency": "once",
+            "start_date": "2024-12-09",
+            "dates": [
+                "2024-12-09"
+            ]
+        },
+        {
+            "time": "10:00",
+            "content": "DATA WEEK 2024 2일차",
+            "frequency": "once",
+            "start_date": "2024-12-10",
+            "dates": [
+                "2024-12-10"
+            ]
+        },
+        {
+            "time": "10:00",
+            "content": "빅분기 실기",
+            "frequency": "once",
+            "start_date": "2024-11-30",
+            "dates": [
+                "2024-11-30"
+            ]
+        }
+    ],
+    "repeating_routines": []
+}

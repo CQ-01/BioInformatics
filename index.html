@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routine Manager</title>
+</head>
+<body>
+    <h1>Routine Manager</h1>
+    <div id="routine-list"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const routineList = document.getElementById('routine-list');
+
+            const fetchRoutines = (date) => {
+                fetch(`/routines?date=${date}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        routineList.innerHTML = '';
+                        data.forEach(routine => {
+                            const routineDiv = document.createElement('div');
+                            routineDiv.className = 'routine-item';
+                            routineDiv.dataset.id = routine.id;
+
+                            const nameSpan = document.createElement('span');
+                            nameSpan.textContent = routine.name;
+                            nameSpan.contentEditable = true;
+                            nameSpan.addEventListener('blur', () =>
+                                updateRoutine(routine.id, nameSpan.textContent, routine.is_completed)
+                            );
+
+                            const checkBox = document.createElement('input');
+                            checkBox.type = 'checkbox';
+                            checkBox.checked = routine.is_completed;
+                            checkBox.addEventListener('change', () =>
+                                updateRoutine(routine.id, routine.name, checkBox.checked)
+                            );
+
+                            const deleteBtn = document.createElement('button');
+                            deleteBtn.textContent = 'Delete';
+                            deleteBtn.addEventListener('click', () => deleteRoutine(routine.id));
+
+                            routineDiv.appendChild(nameSpan);
+                            routineDiv.appendChild(checkBox);
+                            routineDiv.appendChild(deleteBtn);
+                            routineList.appendChild(routineDiv);
+                        });
+                    });
+            };
+
+            const updateRoutine = (id, name, isCompleted) => {
+                fetch(`/routine/update`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `id=${id}&name=${encodeURIComponent(name)}&is_completed=${isCompleted}`,
+                }).then(response => response.json());
+            };
+
+            const deleteRoutine = (id) => {
+                fetch(`/routine/delete`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `id=${id}`,
+                }).then(() => fetchRoutines(new Date().toISOString().split('T')[0]));
+            };
+
+            fetchRoutines(new Date().toISOString().split('T')[0]);
+        });
+    </script>
+</body>
+</html>
